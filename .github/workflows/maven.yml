@@ -24,3 +24,5 @@ jobs:
       run: mvn package -DskipTests --file pom.xml
     - name: Run tests with Maven
       run: mvn test -Dgroups=UnitTest,IntegrationTest --file pom.xml
+    - name: Run the application
+      run: mvn spring-boot:run
