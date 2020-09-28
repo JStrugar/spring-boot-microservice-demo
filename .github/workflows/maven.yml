@@ -25,4 +25,8 @@ jobs:
     - name: Run tests with Maven
       run: mvn test -Dgroups=UnitTest,IntegrationTest --file pom.xml
     - name: Run the application
-      run: mvn spring-boot:run
+      run: |
+            mvn spring-boot:run &
+            sleep 5 &
+            mvn test -Dgroups=UnitTest,IntegrationTest --file pom.xml
+
