@@ -28,5 +28,5 @@ jobs:
       run: |
             mvn spring-boot:run &
             sleep 5 &
-            mvn test -Dgroups=UnitTest,IntegrationTest --file pom.xml
+            mvn test -Dgroups=ApiTest --file pom.xml
 
