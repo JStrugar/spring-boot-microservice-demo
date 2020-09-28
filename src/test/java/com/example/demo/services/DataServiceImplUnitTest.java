@@ -5,6 +5,7 @@ import com.example.demo.models.DataPojo;
 import com.example.demo.repositories.DataRepository;
 import net.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -28,6 +29,7 @@ public class DataServiceImplUnitTest {
     private DataServiceImpl dataService;
 
     @Test
+    @Tag("UnitTest")
     public void AddLeftData() {
         int id = 1;
         byte[] left = Base64.getEncoder().encode("Levo!".getBytes());;
@@ -46,6 +48,7 @@ public class DataServiceImplUnitTest {
 
 
     @Test
+    @Tag("UnitTest")
     public void AddRightData() {
         int id = 1;
         byte[] right = Base64.getEncoder().encode("Desno!".getBytes());;

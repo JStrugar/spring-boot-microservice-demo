@@ -2,10 +2,7 @@ package com.example.demo.services;
 
 import com.example.demo.DemoApplication;
 import com.example.demo.repositories.DataRepository;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -26,6 +23,7 @@ class DataServiceImplTest {
     }
 
     @Test
+    @Tag("IntegrationTest")
     public void AddLeftData(){
         int id = 1;
         byte[] left = Base64.getEncoder().encode("Levo!".getBytes());
@@ -37,6 +35,7 @@ class DataServiceImplTest {
     }
 
     @Test
+    @Tag("IntegrationTest")
     public void AddRightData(){
         int id = 1;
         byte[] right = Base64.getEncoder().encode("Desno!".getBytes());;
@@ -48,6 +47,7 @@ class DataServiceImplTest {
     }
 
     @Test
+    @Tag("IntegrationTest")
     public void AddBothData(){
         int id = 1;
         byte[] left = Base64.getEncoder().encode("Levo!".getBytes());;
@@ -65,6 +65,7 @@ class DataServiceImplTest {
     }
 
     @Test
+    @Tag("IntegrationTest")
     public void GetDiff() {
         int id = 1;
         byte[] left = Base64.getEncoder().encode("Levo!".getBytes());;
