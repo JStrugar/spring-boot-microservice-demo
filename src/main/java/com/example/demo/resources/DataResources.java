@@ -14,14 +14,12 @@ public class DataResources {
     private DataService dataService;
 
     @PostMapping("/{id}/left")
-    public String postLeft(@PathVariable("id") final int id, @RequestBody String data) {
-        dataService.saveDataLeft(id, data);
-        return "ok";
+    public void postLeft(@PathVariable("id") final int id, @RequestBody DataResource data) {
+        dataService.saveDataLeft(id, data.getData().getBytes());
     }
 
     @PostMapping("/{id}/right")
-    public String postRight(@PathVariable("id") final int id, @RequestBody String data) {
-        dataService.saveDataRight(id, data);
-        return "ok";
+    public void postRight(@PathVariable("id") final int id, @RequestBody DataResource data) {
+        dataService.saveDataRight(id, data.getData().getBytes());
     }
 }

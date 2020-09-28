@@ -17,7 +17,7 @@ public class DataServiceImpl implements DataService{
     }
 
     private DataRepository dataRepository;
-    public void saveDataLeft(int id, String data) {
+    public void saveDataLeft(int id, byte[] data) {
         Optional<DataPojo> dataPojoOptional = dataRepository.findById(id);
         byte[] byteData = Base64.getDecoder().decode(data);
         DataPojo dataPojo = null;
@@ -30,7 +30,7 @@ public class DataServiceImpl implements DataService{
         dataRepository.save(dataPojo);
     }
 
-    public void saveDataRight(int id, String data) {
+    public void saveDataRight(int id, byte[] data) {
         Optional<DataPojo> dataPojoOptional = dataRepository.findById(id);
         byte[] byteData = Base64.getDecoder().decode(data);
         DataPojo dataPojo = null;

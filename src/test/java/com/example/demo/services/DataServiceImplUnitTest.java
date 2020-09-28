@@ -30,7 +30,7 @@ public class DataServiceImplUnitTest {
     @Test
     public void AddLeftData() {
         int id = 1;
-        String left = "TGV2byE=";
+        byte[] left = Base64.getEncoder().encode("Levo!".getBytes());;
         DataPojo expected = new DataPojo(1, Base64.getDecoder().decode(left), null);
         dataService.saveDataLeft(id, left);
         final ArgumentCaptor<Integer> idCaptor = ArgumentCaptor.forClass(Integer.class);
@@ -48,7 +48,7 @@ public class DataServiceImplUnitTest {
     @Test
     public void AddRightData() {
         int id = 1;
-        String right = "RGVzbm8h";
+        byte[] right = Base64.getEncoder().encode("Desno!".getBytes());;
         DataPojo expected = new DataPojo(1, Base64.getDecoder().decode(right), null);
         dataService.saveDataRight(id, right);
         final ArgumentCaptor<Integer> idCaptor = ArgumentCaptor.forClass(Integer.class);

@@ -28,7 +28,7 @@ class DataServiceImplTest {
     @Test
     public void AddLeftData(){
         int id = 1;
-        String left = "TGV2byE=";
+        byte[] left = Base64.getEncoder().encode("Levo!".getBytes());
 
         dataService.saveDataLeft(id, left);
 
@@ -39,7 +39,7 @@ class DataServiceImplTest {
     @Test
     public void AddRightData(){
         int id = 1;
-        String right = "RGVzbm8h";
+        byte[] right = Base64.getEncoder().encode("Desno!".getBytes());;
 
         dataService.saveDataRight(id, right);
 
@@ -50,8 +50,8 @@ class DataServiceImplTest {
     @Test
     public void AddBothData(){
         int id = 1;
-        String left = "TGV2byE=";
-        String right = "RGVzbm8h";
+        byte[] left = Base64.getEncoder().encode("Levo!".getBytes());;
+        byte[] right = Base64.getEncoder().encode("Desno!".getBytes());;
 
         dataService.saveDataRight(id, right);
         dataService.saveDataLeft(id, left);
@@ -67,8 +67,8 @@ class DataServiceImplTest {
     @Test
     public void GetDiff() {
         int id = 1;
-        String left = "TGV2byE=";
-        String right = "RGVzbm8h";
+        byte[] left = Base64.getEncoder().encode("Levo!".getBytes());;
+        byte[] right = Base64.getEncoder().encode("Desno!".getBytes());;
 
         dataService.saveDataRight(id, right);
         dataService.saveDataLeft(id, left);
